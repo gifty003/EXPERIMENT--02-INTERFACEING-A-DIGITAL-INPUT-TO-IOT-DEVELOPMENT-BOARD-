@@ -1,8 +1,7 @@
-###  DATE: 
-
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  DATE: 02.09.2024
+###  NAME: GIFTSON RAJARATHINAM N
+###  ROLL NO : 212222233002
+###  DEPARTMENT: AI-DS
 
 
 # EXPERIMENT--02-INTERFACING-A-DIGITAL-INPUT-TO-IOT-DEVELOPMENT-BOARD-
@@ -78,11 +77,36 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 ## STM 32 CUBE PROGRAM :
 
+```
+while (1)
+  {
+    void IRsensor();
+  }
 
+}
+
+
+void IRsensor()
+{
+	IRsensorop=HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_0);
+
+	if(IRsensorop==1)
+	{
+		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET);
+		HAL_Delay(500);
+		HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET);
+		HAL_Delay(500);
+	}
+	else
+	{
+		HAL_GPIO_WritePin(GPIOA,GPIO_PIN_0,GPIO_PIN_RESET);
+	}
+}
+```
 
 ## Output  :
  
- 
+ <img width="1148" alt="Screenshot 2024-09-02 at 9 37 38 AM" src="https://github.com/user-attachments/assets/fc2bffa0-f772-441f-ac04-b9ee4fadfd12">
  
  
 ## Result :
